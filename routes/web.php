@@ -15,27 +15,22 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/admin', function() {
-    return 'Hai admin';
-})->middleware('role:admin');
-
-Route::get('/user', function() {
-    return 'Hai user';
-})->middleware('role:user');
-
-
-
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
+Route::redirect('/', '/prototype/login');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+Route::prefix('prototype')->name('prototype.')->group(function () {
+    route::get('/login', function () {
+        return Inertia::render('Prototype/Login');
+    })->name('login');
+
+    route::get('/register', function () {
+        return Inertia::render('Prototype/Register');
+    })->name('register');
+
+    route::get('/dashbord', function () {
+        return Inertia::render('Prototype/dashbord');
+    })->name('dashbord');
+});
