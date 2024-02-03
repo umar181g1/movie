@@ -182,7 +182,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Class Aliases
+    | class Aliases
     |--------------------------------------------------------------------------
     |
     | This array of class aliases will be registered when this application

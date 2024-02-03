@@ -15,10 +15,10 @@ $(document).ready(function () {
     var dd_target = $("#dropdown-target")
     dd_btn.click(function () {
         dd_btn.each(function () {
-            if (dd_target.hasClass("hidden")) {
-                dd_target.removeClass("hidden").addClass("block");
-            } else if (dd_target.hasClass("block")) {
-                dd_target.removeClass("block").addClass("hidden");
+            if (dd_target.hasclass("hidden")) {
+                dd_target.removeclass("hidden").addclass("block");
+            } else if (dd_target.hasclass("block")) {
+                dd_target.removeclass("block").addclass("hidden");
             }
         })
     })

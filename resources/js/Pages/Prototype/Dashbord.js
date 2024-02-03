@@ -1,3 +1,4 @@
+import Authenticated from "@/Layouts/Authenticated/index";
 export default function Dashbord(){
-    return <h1>ini dashbord</h1>
+    return (<Authenticated />);
 }

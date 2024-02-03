@@ -4412,21 +4412,21 @@ var Content = function Content(_ref3) {
     align = _ref3$align === void 0 ? 'right' : _ref3$align,
     _ref3$width = _ref3.width,
     width = _ref3$width === void 0 ? '48' : _ref3$width,
-    _ref3$contentClasses = _ref3.contentClasses,
-    contentClasses = _ref3$contentClasses === void 0 ? 'py-1 bg-white' : _ref3$contentClasses,
+    _ref3$contentclasses = _ref3.contentclasses,
+    contentclasses = _ref3$contentclasses === void 0 ? 'py-1 bg-white' : _ref3$contentclasses,
     children = _ref3.children;
   var _useContext2 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(DropDownContext),
     open = _useContext2.open,
     setOpen = _useContext2.setOpen;
-  var alignmentClasses = 'origin-top';
+  var alignmentclasses = 'origin-top';
   if (align === 'left') {
-    alignmentClasses = 'origin-top-left left-0';
+    alignmentclasses = 'origin-top-left left-0';
   } else if (align === 'right') {
-    alignmentClasses = 'origin-top-right right-0';
+    alignmentclasses = 'origin-top-right right-0';
   }
-  var widthClasses = '';
+  var widthclasses = '';
   if (width === '48') {
-    widthClasses = 'w-48';
+    widthclasses = 'w-48';
   }
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_3__.Transition, {
@@ -4438,12 +4438,12 @@ var Content = function Content(_ref3) {
       leaveFrom: "transform opacity-100 scale-100",
       leaveTo: "transform opacity-0 scale-95",
       children: open && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: "absolute z-50 mt-2 rounded-md shadow-lg ".concat(alignmentClasses, " ").concat(widthClasses),
+        className: "absolute z-50 mt-2 rounded-md shadow-lg ".concat(alignmentclasses, " ").concat(widthclasses),
         onClick: function onClick() {
           return setOpen(false);
         },
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-          className: "rounded-md ring-1 ring-black ring-opacity-5 " + contentClasses,
+          className: "rounded-md ring-1 ring-black ring-opacity-5 " + contentclasses,
           children: children
         })
       })
@@ -26204,7 +26204,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/* NProgress, 
   NProgress.render = function(fromStart) {
     if (NProgress.isRendered()) return document.getElementById('nprogress');
 
-    addClass(document.documentElement, 'nprogress-busy');
+    addclass(document.documentElement, 'nprogress-busy');
     
     var progress = document.createElement('div');
     progress.id = 'nprogress';
@@ -26226,7 +26226,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/* NProgress, 
     }
 
     if (parent != document.body) {
-      addClass(parent, 'nprogress-custom-parent');
+      addclass(parent, 'nprogress-custom-parent');
     }
 
     parent.appendChild(progress);
@@ -26238,8 +26238,8 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/* NProgress, 
    */
 
   NProgress.remove = function() {
-    removeClass(document.documentElement, 'nprogress-busy');
-    removeClass(document.querySelector(Settings.parent), 'nprogress-custom-parent');
+    removeclass(document.documentElement, 'nprogress-busy');
+    removeclass(document.querySelector(Settings.parent), 'nprogress-custom-parent');
     var progress = document.getElementById('nprogress');
     progress && removeElement(progress);
   };
@@ -26402,7 +26402,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/* NProgress, 
    * (Internal) Determines if an element or space separated list of class names contains a class name.
    */
 
-  function hasClass(element, name) {
+  function hasclass(element, name) {
     var list = typeof element == 'string' ? element : classList(element);
     return list.indexOf(' ' + name + ' ') >= 0;
   }
@@ -26411,11 +26411,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/* NProgress, 
    * (Internal) Adds a class to an element.
    */
 
-  function addClass(element, name) {
+  function addclass(element, name) {
     var oldList = classList(element),
         newList = oldList + name;
 
-    if (hasClass(oldList, name)) return; 
+    if (hasclass(oldList, name)) return; 
 
     // Trim the opening space.
     element.className = newList.substring(1);
@@ -26425,11 +26425,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/* NProgress, 
    * (Internal) Removes a class from an element.
    */
 
-  function removeClass(element, name) {
+  function removeclass(element, name) {
     var oldList = classList(element),
         newList;
 
-    if (!hasClass(element, name)) return;
+    if (!hasclass(element, name)) return;
 
     // Replace the class name.
     newList = oldList.replace(' ' + name + ' ', ' ');
@@ -28301,7 +28301,7 @@ if (!React) {
 }
 
 var FunctionComponent = 0;
-var ClassComponent = 1;
+var classComponent = 1;
 var IndeterminateComponent = 2; // Before we know whether it is function or class
 
 var HostRoot = 3; // Root of a host tree. Could be nested inside another node.
@@ -28320,7 +28320,7 @@ var SuspenseComponent = 13;
 var MemoComponent = 14;
 var SimpleMemoComponent = 15;
 var LazyComponent = 16;
-var IncompleteClassComponent = 17;
+var IncompleteclassComponent = 17;
 var DehydratedFragment = 18;
 var SuspenseListComponent = 19;
 var FundamentalComponent = 20;
@@ -29250,7 +29250,7 @@ function describeNativeComponentFrame(fn, construct) {
   return syntheticFrame;
 }
 
-function describeClassComponentFrame(ctor, source, ownerFn) {
+function describeclassComponentFrame(ctor, source, ownerFn) {
   {
     return describeNativeComponentFrame(ctor, true);
   }
@@ -29347,8 +29347,8 @@ function describeFiber(fiber) {
     case Block:
       return describeFunctionComponentFrame(fiber.type._render);
 
-    case ClassComponent:
-      return describeClassComponentFrame(fiber.type);
+    case classComponent:
+      return describeclassComponentFrame(fiber.type);
 
     default:
       return '';
@@ -32488,7 +32488,7 @@ function isMounted(component) {
   {
     var owner = ReactCurrentOwner.current;
 
-    if (owner !== null && owner.tag === ClassComponent) {
+    if (owner !== null && owner.tag === classComponent) {
       var ownerFiber = owner;
       var instance = ownerFiber.stateNode;
 
@@ -39257,7 +39257,7 @@ function findCurrentUnmaskedContext(fiber) {
   {
     // Currently this is only used with renderSubtreeIntoContainer; not sure if it
     // makes sense elsewhere
-    if (!(isFiberMounted(fiber) && fiber.tag === ClassComponent)) {
+    if (!(isFiberMounted(fiber) && fiber.tag === classComponent)) {
       {
         throw Error( "Expected subtree parent to be a mounted class component. This error is likely caused by a bug in React. Please file an issue." );
       }
@@ -39270,7 +39270,7 @@ function findCurrentUnmaskedContext(fiber) {
         case HostRoot:
           return node.stateNode.context;
 
-        case ClassComponent:
+        case classComponent:
           {
             var Component = node.type;
 
@@ -39971,7 +39971,7 @@ function propagateContextChange(workInProgress, context, changedBits, renderLane
         // Check if the context matches.
         if (dependency.context === context && (dependency.observedBits & changedBits) !== 0) {
           // Match! Schedule an update on this fiber.
-          if (fiber.tag === ClassComponent) {
+          if (fiber.tag === classComponent) {
             // Schedule a force update on the work-in-progress.
             var update = createUpdate(NoTimestamp, pickArbitraryLane(renderLanes));
             update.tag = ForceUpdate; // TODO: Because we don't have a work-in-progress, this will add the
@@ -40365,7 +40365,7 @@ function getStateFromUpdate(workInProgress, queue, update, prevState, nextProps,
 }
 
 function processUpdateQueue(workInProgress, props, instance, renderLanes) {
-  // This is always non-null on a ClassComponent or HostRoot
+  // This is always non-null on a classComponent or HostRoot
   var queue = workInProgress.updateQueue;
   hasForceUpdate = false;
 
@@ -40401,7 +40401,7 @@ function processUpdateQueue(workInProgress, props, instance, renderLanes) {
     var current = workInProgress.alternate;
 
     if (current !== null) {
-      // This is always non-null on a ClassComponent or HostRoot
+      // This is always non-null on a classComponent or HostRoot
       var currentQueue = current.updateQueue;
       var currentLastBaseUpdate = currentQueue.lastBaseUpdate;
 
@@ -40766,7 +40766,7 @@ function checkShouldComponentUpdate(workInProgress, ctor, oldProps, newProps, ol
   return true;
 }
 
-function checkClassInstance(workInProgress, ctor, newProps) {
+function checkclassInstance(workInProgress, ctor, newProps) {
   var instance = workInProgress.stateNode;
 
   {
@@ -40781,12 +40781,12 @@ function checkClassInstance(workInProgress, ctor, newProps) {
       }
     }
 
-    if (instance.getInitialState && !instance.getInitialState.isReactClassApproved && !instance.state) {
-      error('getInitialState was defined on %s, a plain JavaScript class. ' + 'This is only supported for classes created using React.createClass. ' + 'Did you mean to define a state property instead?', name);
+    if (instance.getInitialState && !instance.getInitialState.isReactclassApproved && !instance.state) {
+      error('getInitialState was defined on %s, a plain JavaScript class. ' + 'This is only supported for classes created using React.createclass. ' + 'Did you mean to define a state property instead?', name);
     }
 
-    if (instance.getDefaultProps && !instance.getDefaultProps.isReactClassApproved) {
-      error('getDefaultProps was defined on %s, a plain JavaScript class. ' + 'This is only supported for classes created using React.createClass. ' + 'Use a static property to define defaultProps instead.', name);
+    if (instance.getDefaultProps && !instance.getDefaultProps.isReactclassApproved) {
+      error('getDefaultProps was defined on %s, a plain JavaScript class. ' + 'This is only supported for classes created using React.createclass. ' + 'Use a static property to define defaultProps instead.', name);
     }
 
     if (instance.propTypes) {
@@ -40873,7 +40873,7 @@ function checkClassInstance(workInProgress, ctor, newProps) {
   }
 }
 
-function adoptClassInstance(workInProgress, instance) {
+function adoptclassInstance(workInProgress, instance) {
   instance.updater = classComponentUpdater;
   workInProgress.stateNode = instance; // The instance needs access to the fiber so that it can schedule updates
 
@@ -40884,7 +40884,7 @@ function adoptClassInstance(workInProgress, instance) {
   }
 }
 
-function constructClassInstance(workInProgress, ctor, props) {
+function constructclassInstance(workInProgress, ctor, props) {
   var isLegacyContextConsumer = false;
   var unmaskedContext = emptyContextObject;
   var context = emptyContextObject;
@@ -40941,7 +40941,7 @@ function constructClassInstance(workInProgress, ctor, props) {
 
   var instance = new ctor(props, context);
   var state = workInProgress.memoizedState = instance.state !== null && instance.state !== undefined ? instance.state : null;
-  adoptClassInstance(workInProgress, instance);
+  adoptclassInstance(workInProgress, instance);
 
   {
     if (typeof ctor.getDerivedStateFromProps === 'function' && state === null) {
@@ -41050,9 +41050,9 @@ function callComponentWillReceiveProps(workInProgress, instance, newProps, nextC
 } // Invokes the mount life-cycles on a previously never rendered instance.
 
 
-function mountClassInstance(workInProgress, ctor, newProps, renderLanes) {
+function mountclassInstance(workInProgress, ctor, newProps, renderLanes) {
   {
-    checkClassInstance(workInProgress, ctor, newProps);
+    checkclassInstance(workInProgress, ctor, newProps);
   }
 
   var instance = workInProgress.stateNode;
@@ -41113,7 +41113,7 @@ function mountClassInstance(workInProgress, ctor, newProps, renderLanes) {
   }
 }
 
-function resumeMountClassInstance(workInProgress, ctor, newProps, renderLanes) {
+function resumeMountclassInstance(workInProgress, ctor, newProps, renderLanes) {
   var instance = workInProgress.stateNode;
   var oldProps = workInProgress.memoizedProps;
   instance.props = oldProps;
@@ -41202,7 +41202,7 @@ function resumeMountClassInstance(workInProgress, ctor, newProps, renderLanes) {
 } // Invokes the update life-cycles and returns false if it shouldn't rerender.
 
 
-function updateClassInstance(current, workInProgress, ctor, newProps, renderLanes) {
+function updateclassInstance(current, workInProgress, ctor, newProps, renderLanes) {
   var instance = workInProgress.stateNode;
   cloneUpdateQueue(current, workInProgress);
   var unresolvedOldProps = workInProgress.memoizedProps;
@@ -41394,7 +41394,7 @@ function coerceRef(returnFiber, current, element) {
       if (owner) {
         var ownerFiber = owner;
 
-        if (!(ownerFiber.tag === ClassComponent)) {
+        if (!(ownerFiber.tag === classComponent)) {
           {
             throw Error( "Function components cannot have string refs. We recommend using useRef() instead. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-string-ref" );
           }
@@ -42370,7 +42370,7 @@ function ChildReconciler(shouldTrackSideEffects) {
       // component, throw an error. If Fiber return types are disabled,
       // we already threw above.
       switch (returnFiber.tag) {
-        case ClassComponent:
+        case classComponent:
           {
             {
               var instance = returnFiber.stateNode;
@@ -45187,7 +45187,7 @@ function transferActualDuration(fiber) {
 
 var ReactCurrentOwner$1 = ReactSharedInternals.ReactCurrentOwner;
 var didReceiveUpdate = false;
-var didWarnAboutBadClass;
+var didWarnAboutBadclass;
 var didWarnAboutModulePatternComponent;
 var didWarnAboutContextTypeOnFunctionComponent;
 var didWarnAboutGetDerivedStateOnFunctionComponent;
@@ -45197,7 +45197,7 @@ var didWarnAboutRevealOrder;
 var didWarnAboutTailOptions;
 
 {
-  didWarnAboutBadClass = {};
+  didWarnAboutBadclass = {};
   didWarnAboutModulePatternComponent = {};
   didWarnAboutContextTypeOnFunctionComponent = {};
   didWarnAboutGetDerivedStateOnFunctionComponent = {};
@@ -45605,7 +45605,7 @@ function updateFunctionComponent(current, workInProgress, Component, nextProps, 
   return workInProgress.child;
 }
 
-function updateClassComponent(current, workInProgress, Component, nextProps, renderLanes) {
+function updateclassComponent(current, workInProgress, Component, nextProps, renderLanes) {
   {
     if (workInProgress.type !== workInProgress.elementType) {
       // Lazy component props can't be validated in createElement
@@ -45619,7 +45619,7 @@ function updateClassComponent(current, workInProgress, Component, nextProps, ren
     }
   } // Push context providers early to prevent context stack mismatches.
   // During mounting we don't know the child context yet as the instance doesn't exist.
-  // We will invalidate the child context in finishClassComponent() right after rendering.
+  // We will invalidate the child context in finishclassComponent() right after rendering.
 
 
   var hasContext;
@@ -45648,17 +45648,17 @@ function updateClassComponent(current, workInProgress, Component, nextProps, ren
     } // In the initial pass we might need to construct the instance.
 
 
-    constructClassInstance(workInProgress, Component, nextProps);
-    mountClassInstance(workInProgress, Component, nextProps, renderLanes);
+    constructclassInstance(workInProgress, Component, nextProps);
+    mountclassInstance(workInProgress, Component, nextProps, renderLanes);
     shouldUpdate = true;
   } else if (current === null) {
     // In a resume, we'll already have an instance we can reuse.
-    shouldUpdate = resumeMountClassInstance(workInProgress, Component, nextProps, renderLanes);
+    shouldUpdate = resumeMountclassInstance(workInProgress, Component, nextProps, renderLanes);
   } else {
-    shouldUpdate = updateClassInstance(current, workInProgress, Component, nextProps, renderLanes);
+    shouldUpdate = updateclassInstance(current, workInProgress, Component, nextProps, renderLanes);
   }
 
-  var nextUnitOfWork = finishClassComponent(current, workInProgress, Component, shouldUpdate, hasContext, renderLanes);
+  var nextUnitOfWork = finishclassComponent(current, workInProgress, Component, shouldUpdate, hasContext, renderLanes);
 
   {
     var inst = workInProgress.stateNode;
@@ -45675,7 +45675,7 @@ function updateClassComponent(current, workInProgress, Component, nextProps, ren
   return nextUnitOfWork;
 }
 
-function finishClassComponent(current, workInProgress, Component, shouldUpdate, hasContext, renderLanes) {
+function finishclassComponent(current, workInProgress, Component, shouldUpdate, hasContext, renderLanes) {
   // Refs should update even if shouldComponentUpdate returns false
   markRef(current, workInProgress);
   var didCaptureError = (workInProgress.flags & DidCapture) !== NoFlags;
@@ -45904,13 +45904,13 @@ function mountLazyComponent(_current, workInProgress, elementType, updateLanes, 
         return child;
       }
 
-    case ClassComponent:
+    case classComponent:
       {
         {
-          workInProgress.type = Component = resolveClassForHotReloading(Component);
+          workInProgress.type = Component = resolveclassForHotReloading(Component);
         }
 
-        child = updateClassComponent(null, workInProgress, Component, resolvedProps, renderLanes);
+        child = updateclassComponent(null, workInProgress, Component, resolvedProps, renderLanes);
         return child;
       }
 
@@ -45961,7 +45961,7 @@ function mountLazyComponent(_current, workInProgress, elementType, updateLanes, 
   }
 }
 
-function mountIncompleteClassComponent(_current, workInProgress, Component, nextProps, renderLanes) {
+function mountIncompleteclassComponent(_current, workInProgress, Component, nextProps, renderLanes) {
   if (_current !== null) {
     // An incomplete component only mounts if it suspended inside a non-
     // concurrent tree, in an inconsistent state. We want to treat it like
@@ -45974,10 +45974,10 @@ function mountIncompleteClassComponent(_current, workInProgress, Component, next
   } // Promote the fiber to a class and try rendering again.
 
 
-  workInProgress.tag = ClassComponent; // The rest of this function is a fork of `updateClassComponent`
+  workInProgress.tag = classComponent; // The rest of this function is a fork of `updateclassComponent`
   // Push context providers early to prevent context stack mismatches.
   // During mounting we don't know the child context yet as the instance doesn't exist.
-  // We will invalidate the child context in finishClassComponent() right after rendering.
+  // We will invalidate the child context in finishclassComponent() right after rendering.
 
   var hasContext;
 
@@ -45989,9 +45989,9 @@ function mountIncompleteClassComponent(_current, workInProgress, Component, next
   }
 
   prepareToReadContext(workInProgress, renderLanes);
-  constructClassInstance(workInProgress, Component, nextProps);
-  mountClassInstance(workInProgress, Component, nextProps, renderLanes);
-  return finishClassComponent(null, workInProgress, Component, true, hasContext, renderLanes);
+  constructclassInstance(workInProgress, Component, nextProps);
+  mountclassInstance(workInProgress, Component, nextProps, renderLanes);
+  return finishclassComponent(null, workInProgress, Component, true, hasContext, renderLanes);
 }
 
 function mountIndeterminateComponent(_current, workInProgress, Component, renderLanes) {
@@ -46021,10 +46021,10 @@ function mountIndeterminateComponent(_current, workInProgress, Component, render
     if (Component.prototype && typeof Component.prototype.render === 'function') {
       var componentName = getComponentName(Component) || 'Unknown';
 
-      if (!didWarnAboutBadClass[componentName]) {
+      if (!didWarnAboutBadclass[componentName]) {
         error("The <%s /> component appears to have a render method, but doesn't extend React.Component. " + 'This is likely to cause errors. Change %s to extend React.Component instead.', componentName, componentName);
 
-        didWarnAboutBadClass[componentName] = true;
+        didWarnAboutBadclass[componentName] = true;
       }
     }
 
@@ -46069,12 +46069,12 @@ function mountIndeterminateComponent(_current, workInProgress, Component, render
     } // Proceed under the assumption that this is a class instance
 
 
-    workInProgress.tag = ClassComponent; // Throw out any hooks that were used.
+    workInProgress.tag = classComponent; // Throw out any hooks that were used.
 
     workInProgress.memoizedState = null;
     workInProgress.updateQueue = null; // Push context providers early to prevent context stack mismatches.
     // During mounting we don't know the child context yet as the instance doesn't exist.
-    // We will invalidate the child context in finishClassComponent() right after rendering.
+    // We will invalidate the child context in finishclassComponent() right after rendering.
 
     var hasContext = false;
 
@@ -46093,9 +46093,9 @@ function mountIndeterminateComponent(_current, workInProgress, Component, render
       applyDerivedStateFromProps(workInProgress, Component, getDerivedStateFromProps, props);
     }
 
-    adoptClassInstance(workInProgress, value);
-    mountClassInstance(workInProgress, Component, props, renderLanes);
-    return finishClassComponent(null, workInProgress, Component, true, hasContext, renderLanes);
+    adoptclassInstance(workInProgress, value);
+    mountclassInstance(workInProgress, Component, props, renderLanes);
+    return finishclassComponent(null, workInProgress, Component, true, hasContext, renderLanes);
   } else {
     // Proceed under the assumption that this is a function component
     workInProgress.tag = FunctionComponent;
@@ -47101,7 +47101,7 @@ function beginWork(current, workInProgress, renderLanes) {
           pushHostContext(workInProgress);
           break;
 
-        case ClassComponent:
+        case classComponent:
           {
             var Component = workInProgress.type;
 
@@ -47289,14 +47289,14 @@ function beginWork(current, workInProgress, renderLanes) {
         return updateFunctionComponent(current, workInProgress, _Component, resolvedProps, renderLanes);
       }
 
-    case ClassComponent:
+    case classComponent:
       {
         var _Component2 = workInProgress.type;
         var _unresolvedProps = workInProgress.pendingProps;
 
         var _resolvedProps = workInProgress.elementType === _Component2 ? _unresolvedProps : resolveDefaultProps(_Component2, _unresolvedProps);
 
-        return updateClassComponent(current, workInProgress, _Component2, _resolvedProps, renderLanes);
+        return updateclassComponent(current, workInProgress, _Component2, _resolvedProps, renderLanes);
       }
 
     case HostRoot:
@@ -47366,14 +47366,14 @@ function beginWork(current, workInProgress, renderLanes) {
         return updateSimpleMemoComponent(current, workInProgress, workInProgress.type, workInProgress.pendingProps, updateLanes, renderLanes);
       }
 
-    case IncompleteClassComponent:
+    case IncompleteclassComponent:
       {
         var _Component3 = workInProgress.type;
         var _unresolvedProps4 = workInProgress.pendingProps;
 
         var _resolvedProps4 = workInProgress.elementType === _Component3 ? _unresolvedProps4 : resolveDefaultProps(_Component3, _unresolvedProps4);
 
-        return mountIncompleteClassComponent(current, workInProgress, _Component3, _resolvedProps4, renderLanes);
+        return mountIncompleteclassComponent(current, workInProgress, _Component3, _resolvedProps4, renderLanes);
       }
 
     case SuspenseListComponent:
@@ -47602,7 +47602,7 @@ function completeWork(current, workInProgress, renderLanes) {
     case MemoComponent:
       return null;
 
-    case ClassComponent:
+    case classComponent:
       {
         var Component = workInProgress.type;
 
@@ -47830,7 +47830,7 @@ function completeWork(current, workInProgress, renderLanes) {
       popProvider(workInProgress);
       return null;
 
-    case IncompleteClassComponent:
+    case IncompleteclassComponent:
       {
         // Same as class component case. I put it down here so that the tags are
         // sequential to ensure this switch is compiled to a jump table.
@@ -48098,7 +48098,7 @@ function completeWork(current, workInProgress, renderLanes) {
 
 function unwindWork(workInProgress, renderLanes) {
   switch (workInProgress.tag) {
-    case ClassComponent:
+    case classComponent:
       {
         var Component = workInProgress.type;
 
@@ -48192,7 +48192,7 @@ function unwindWork(workInProgress, renderLanes) {
 
 function unwindInterruptedWork(interruptedWork) {
   switch (interruptedWork.tag) {
-    case ClassComponent:
+    case classComponent:
       {
         var childContextTypes = interruptedWork.type.childContextTypes;
 
@@ -48276,7 +48276,7 @@ function logCapturedError(boundary, errorInfo) {
       // We record this information as an expando on the error.
 
       if (error != null && error._suppressLogging) {
-        if (boundary.tag === ClassComponent) {
+        if (boundary.tag === classComponent) {
           // The error is recoverable and was silenced.
           // Ignore it and don't print the stack addendum.
           // This is handy for testing error boundaries without noise.
@@ -48342,7 +48342,7 @@ function createRootErrorUpdate(fiber, errorInfo, lane) {
   return update;
 }
 
-function createClassErrorUpdate(fiber, errorInfo, lane) {
+function createclassErrorUpdate(fiber, errorInfo, lane) {
   var update = createUpdate(NoTimestamp, lane);
   update.tag = CaptureUpdate;
   var getDerivedStateFromError = fiber.type.getDerivedStateFromError;
@@ -48489,14 +48489,14 @@ function throwException(root, returnFiber, sourceFiber, value, rootRenderLanes) 
 
           sourceFiber.flags &= ~(LifecycleEffectMask | Incomplete);
 
-          if (sourceFiber.tag === ClassComponent) {
+          if (sourceFiber.tag === classComponent) {
             var currentSourceFiber = sourceFiber.alternate;
 
             if (currentSourceFiber === null) {
               // This is a new mount. Change the tag so it's not mistaken for a
               // completed class component. For example, we should not call
               // componentWillUnmount if it is deleted.
-              sourceFiber.tag = IncompleteClassComponent;
+              sourceFiber.tag = IncompleteclassComponent;
             } else {
               // When we try rendering again, we should not reuse the current fiber,
               // since it's known to be in an inconsistent state. Use a force update to
@@ -48592,7 +48592,7 @@ function throwException(root, returnFiber, sourceFiber, value, rootRenderLanes) 
           return;
         }
 
-      case ClassComponent:
+      case classComponent:
         // Capture and retry
         var errorInfo = value;
         var ctor = workInProgress.type;
@@ -48605,7 +48605,7 @@ function throwException(root, returnFiber, sourceFiber, value, rootRenderLanes) 
 
           workInProgress.lanes = mergeLanes(workInProgress.lanes, _lane); // Schedule the error boundary to re-render using updated state
 
-          var _update2 = createClassErrorUpdate(workInProgress, errorInfo, _lane);
+          var _update2 = createclassErrorUpdate(workInProgress, errorInfo, _lane);
 
           enqueueCapturedUpdate(workInProgress, _update2);
           return;
@@ -48687,7 +48687,7 @@ function commitBeforeMutationLifeCycles(current, finishedWork) {
         return;
       }
 
-    case ClassComponent:
+    case classComponent:
       {
         if (finishedWork.flags & Snapshot) {
           if (current !== null) {
@@ -48743,7 +48743,7 @@ function commitBeforeMutationLifeCycles(current, finishedWork) {
     case HostComponent:
     case HostText:
     case HostPortal:
-    case IncompleteClassComponent:
+    case IncompleteclassComponent:
       // Nothing to do for these component types
       return;
   }
@@ -48859,7 +48859,7 @@ function commitLifeCycles(finishedRoot, current, finishedWork, committedLanes) {
         return;
       }
 
-    case ClassComponent:
+    case classComponent:
       {
         var instance = finishedWork.stateNode;
 
@@ -48948,7 +48948,7 @@ function commitLifeCycles(finishedRoot, current, finishedWork, committedLanes) {
                 _instance = getPublicInstance(finishedWork.child.stateNode);
                 break;
 
-              case ClassComponent:
+              case classComponent:
                 _instance = finishedWork.child.stateNode;
                 break;
             }
@@ -49014,7 +49014,7 @@ function commitLifeCycles(finishedRoot, current, finishedWork, committedLanes) {
       }
 
     case SuspenseListComponent:
-    case IncompleteClassComponent:
+    case IncompleteclassComponent:
     case FundamentalComponent:
     case ScopeComponent:
     case OffscreenComponent:
@@ -49163,7 +49163,7 @@ function commitUnmount(finishedRoot, current, renderPriorityLevel) {
         return;
       }
 
-    case ClassComponent:
+    case classComponent:
       {
         safelyDetachRef(current);
         var instance = current.stateNode;
@@ -49597,7 +49597,7 @@ function commitWork(current, finishedWork) {
         return;
       }
 
-    case ClassComponent:
+    case classComponent:
       {
         return;
       }
@@ -49677,7 +49677,7 @@ function commitWork(current, finishedWork) {
         return;
       }
 
-    case IncompleteClassComponent:
+    case IncompleteclassComponent:
       {
         return;
       }
@@ -49808,7 +49808,7 @@ function commitResetTextContent(current) {
 }
 
 var COMPONENT_TYPE = 0;
-var HAS_PSEUDO_CLASS_TYPE = 1;
+var HAS_PSEUDO_class_TYPE = 1;
 var ROLE_TYPE = 2;
 var TEST_NAME_TYPE = 3;
 var TEXT_TYPE = 4;
@@ -49816,7 +49816,7 @@ var TEXT_TYPE = 4;
 if (typeof Symbol === 'function' && Symbol.for) {
   var symbolFor$1 = Symbol.for;
   COMPONENT_TYPE = symbolFor$1('selector.component');
-  HAS_PSEUDO_CLASS_TYPE = symbolFor$1('selector.has_pseudo_class');
+  HAS_PSEUDO_class_TYPE = symbolFor$1('selector.has_pseudo_class');
   ROLE_TYPE = symbolFor$1('selector.role');
   TEST_NAME_TYPE = symbolFor$1('selector.test_id');
   TEXT_TYPE = symbolFor$1('selector.text');
@@ -51893,13 +51893,13 @@ function captureCommitPhaseError(sourceFiber, error) {
     if (fiber.tag === HostRoot) {
       captureCommitPhaseErrorOnRoot(fiber, sourceFiber, error);
       return;
-    } else if (fiber.tag === ClassComponent) {
+    } else if (fiber.tag === classComponent) {
       var ctor = fiber.type;
       var instance = fiber.stateNode;
 
       if (typeof ctor.getDerivedStateFromError === 'function' || typeof instance.componentDidCatch === 'function' && !isAlreadyFailedLegacyErrorBoundary(instance)) {
         var errorInfo = createCapturedValue(error, sourceFiber);
-        var update = createClassErrorUpdate(fiber, errorInfo, SyncLane);
+        var update = createclassErrorUpdate(fiber, errorInfo, SyncLane);
         enqueueUpdate(fiber, update);
         var eventTime = requestEventTime();
         var root = markUpdateLaneFromFiberToRoot(fiber, SyncLane);
@@ -52060,7 +52060,7 @@ function warnAboutUpdateOnNotYetMountedFiberInDEV(fiber) {
 
     var tag = fiber.tag;
 
-    if (tag !== IndeterminateComponent && tag !== HostRoot && tag !== ClassComponent && tag !== FunctionComponent && tag !== ForwardRef && tag !== MemoComponent && tag !== SimpleMemoComponent && tag !== Block) {
+    if (tag !== IndeterminateComponent && tag !== HostRoot && tag !== classComponent && tag !== FunctionComponent && tag !== ForwardRef && tag !== MemoComponent && tag !== SimpleMemoComponent && tag !== Block) {
       // Only warn for user-defined components, not internal ones like Suspense.
       return;
     } // We show the whole stack but dedupe on the top component's name because
@@ -52101,7 +52101,7 @@ function warnAboutUpdateOnUnmountedFiberInDEV(fiber) {
   {
     var tag = fiber.tag;
 
-    if (tag !== HostRoot && tag !== ClassComponent && tag !== FunctionComponent && tag !== ForwardRef && tag !== MemoComponent && tag !== SimpleMemoComponent && tag !== Block) {
+    if (tag !== HostRoot && tag !== classComponent && tag !== FunctionComponent && tag !== ForwardRef && tag !== MemoComponent && tag !== SimpleMemoComponent && tag !== Block) {
       // Only warn for user-defined components, not internal ones like Suspense.
       return;
     } // If there are pending passive effects unmounts for this Fiber,
@@ -52132,7 +52132,7 @@ function warnAboutUpdateOnUnmountedFiberInDEV(fiber) {
       try {
         setCurrentFiber(fiber);
 
-        error("Can't perform a React state update on an unmounted component. This " + 'is a no-op, but it indicates a memory leak in your application. To ' + 'fix, cancel all subscriptions and asynchronous tasks in %s.', tag === ClassComponent ? 'the componentWillUnmount method' : 'a useEffect cleanup function');
+        error("Can't perform a React state update on an unmounted component. This " + 'is a no-op, but it indicates a memory leak in your application. To ' + 'fix, cancel all subscriptions and asynchronous tasks in %s.', tag === classComponent ? 'the componentWillUnmount method' : 'a useEffect cleanup function');
       } finally {
         if (previousFiber) {
           setCurrentFiber(fiber);
@@ -52226,7 +52226,7 @@ function warnAboutRenderPhaseUpdatesInDEV(fiber) {
             break;
           }
 
-        case ClassComponent:
+        case classComponent:
           {
             if (!didWarnAboutUpdateInRender) {
               error('Cannot update during an existing state transition (such as ' + 'within `render`). Render methods should be a pure ' + 'function of props and state.');
@@ -52493,7 +52493,7 @@ function resolveFunctionForHotReloading(type) {
     return family.current;
   }
 }
-function resolveClassForHotReloading(type) {
+function resolveclassForHotReloading(type) {
   // No implementation differences.
   return resolveFunctionForHotReloading(type);
 }
@@ -52549,7 +52549,7 @@ function isCompatibleFamilyForHotReloading(fiber, element) {
     var $$typeofNextType = typeof nextType === 'object' && nextType !== null ? nextType.$$typeof : null;
 
     switch (fiber.tag) {
-      case ClassComponent:
+      case classComponent:
         {
           if (typeof nextType === 'function') {
             needsCompareFamilies = true;
@@ -52680,7 +52680,7 @@ function scheduleFibersWithFamiliesRecursively(fiber, updatedFamilies, staleFami
     switch (tag) {
       case FunctionComponent:
       case SimpleMemoComponent:
-      case ClassComponent:
+      case classComponent:
         candidateType = type;
         break;
 
@@ -52703,7 +52703,7 @@ function scheduleFibersWithFamiliesRecursively(fiber, updatedFamilies, staleFami
         if (staleFamilies.has(family)) {
           needsRemount = true;
         } else if (updatedFamilies.has(family)) {
-          if (tag === ClassComponent) {
+          if (tag === classComponent) {
             needsRemount = true;
           } else {
             needsRender = true;
@@ -52758,7 +52758,7 @@ function findHostInstancesForMatchingFibersRecursively(fiber, types, hostInstanc
     switch (tag) {
       case FunctionComponent:
       case SimpleMemoComponent:
-      case ClassComponent:
+      case classComponent:
         candidateType = type;
         break;
 
@@ -52980,7 +52980,7 @@ function isSimpleFunctionComponent(type) {
 }
 function resolveLazyComponentTag(Component) {
   if (typeof Component === 'function') {
-    return shouldConstruct$1(Component) ? ClassComponent : FunctionComponent;
+    return shouldConstruct$1(Component) ? classComponent : FunctionComponent;
   } else if (Component !== undefined && Component !== null) {
     var $$typeof = Component.$$typeof;
 
@@ -53075,8 +53075,8 @@ function createWorkInProgress(current, pendingProps) {
         workInProgress.type = resolveFunctionForHotReloading(current.type);
         break;
 
-      case ClassComponent:
-        workInProgress.type = resolveClassForHotReloading(current.type);
+      case classComponent:
+        workInProgress.type = resolveclassForHotReloading(current.type);
         break;
 
       case ForwardRef:
@@ -53177,10 +53177,10 @@ key, pendingProps, owner, mode, lanes) {
 
   if (typeof type === 'function') {
     if (shouldConstruct$1(type)) {
-      fiberTag = ClassComponent;
+      fiberTag = classComponent;
 
       {
-        resolvedType = resolveClassForHotReloading(resolvedType);
+        resolvedType = resolveclassForHotReloading(resolvedType);
       }
     } else {
       {
@@ -53576,7 +53576,7 @@ function getContextForSubtree(parentComponent) {
   var fiber = get(parentComponent);
   var parentContext = findCurrentUnmaskedContext(fiber);
 
-  if (fiber.tag === ClassComponent) {
+  if (fiber.tag === classComponent) {
     var Component = fiber.type;
 
     if (isContextProvider(Component)) {
@@ -55616,8 +55616,8 @@ function validatePropTypes(element) {
       error('Component %s declared `PropTypes` instead of `propTypes`. Did you misspell the property assignment?', _name || 'Unknown');
     }
 
-    if (typeof type.getDefaultProps === 'function' && !type.getDefaultProps.isReactClassApproved) {
-      error('getDefaultProps is only used on classic React.createClass ' + 'definitions. Use a static property named `defaultProps` instead.');
+    if (typeof type.getDefaultProps === 'function' && !type.getDefaultProps.isReactclassApproved) {
+      error('getDefaultProps is only used on classic React.createclass ' + 'definitions. Use a static property named `defaultProps` instead.');
     }
   }
 }
@@ -55996,7 +55996,7 @@ var didWarnStateUpdateForUnmountedComponent = {};
 function warnNoop(publicInstance, callerName) {
   {
     var _constructor = publicInstance.constructor;
-    var componentName = _constructor && (_constructor.displayName || _constructor.name) || 'ReactClass';
+    var componentName = _constructor && (_constructor.displayName || _constructor.name) || 'Reactclass';
     var warningKey = componentName + "." + callerName;
 
     if (didWarnStateUpdateForUnmountedComponent[warningKey]) {
@@ -56016,7 +56016,7 @@ function warnNoop(publicInstance, callerName) {
 var ReactNoopUpdateQueue = {
   /**
    * Checks whether or not this composite component is mounted.
-   * @param {ReactClass} publicInstance The instance we want to test.
+   * @param {Reactclass} publicInstance The instance we want to test.
    * @return {boolean} True if mounted, false otherwise.
    * @protected
    * @final
@@ -56035,7 +56035,7 @@ var ReactNoopUpdateQueue = {
    * This will not invoke `shouldComponentUpdate`, but it will invoke
    * `componentWillUpdate` and `componentDidUpdate`.
    *
-   * @param {ReactClass} publicInstance The instance that should rerender.
+   * @param {Reactclass} publicInstance The instance that should rerender.
    * @param {?function} callback Called after component is updated.
    * @param {?string} callerName name of the calling function in the public API.
    * @internal
@@ -56051,7 +56051,7 @@ var ReactNoopUpdateQueue = {
    * There is no guarantee that `this.state` will be immediately updated, so
    * accessing `this.state` after calling this method may return the old value.
    *
-   * @param {ReactClass} publicInstance The instance that should rerender.
+   * @param {Reactclass} publicInstance The instance that should rerender.
    * @param {object} completeState Next state.
    * @param {?function} callback Called after component is updated.
    * @param {?string} callerName name of the calling function in the public API.
@@ -56067,7 +56067,7 @@ var ReactNoopUpdateQueue = {
    * properties which is confusing. TODO: Expose pendingState or don't use it
    * during the merge.
    *
-   * @param {ReactClass} publicInstance The instance that should rerender.
+   * @param {Reactclass} publicInstance The instance that should rerender.
    * @param {object} partialState Next partial state to be merged with state.
    * @param {?function} callback Called after component is updated.
    * @param {?string} Name of the calling function in the public API.
@@ -57912,8 +57912,8 @@ function validatePropTypes(element) {
       error('Component %s declared `PropTypes` instead of `propTypes`. Did you misspell the property assignment?', _name || 'Unknown');
     }
 
-    if (typeof type.getDefaultProps === 'function' && !type.getDefaultProps.isReactClassApproved) {
-      error('getDefaultProps is only used on classic React.createClass ' + 'definitions. Use a static property named `defaultProps` instead.');
+    if (typeof type.getDefaultProps === 'function' && !type.getDefaultProps.isReactclassApproved) {
+      error('getDefaultProps is only used on classic React.createclass ' + 'definitions. Use a static property named `defaultProps` instead.');
     }
   }
 }
