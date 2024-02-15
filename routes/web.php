@@ -33,4 +33,8 @@ Route::prefix('prototype')->name('prototype.')->group(function () {
     route::get('/dashbord', function () {
         return Inertia::render('Prototype/Dashbord');
     })->name('dashbord');
+
+    route::get('/subscraptionPlan', function () {
+        return Inertia::render('Prototype/SubscraptionPlan');
+    })->name('subscraptionPlan');
 });
