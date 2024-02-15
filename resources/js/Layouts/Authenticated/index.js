@@ -1,18 +1,25 @@
-export default function Authenticated({Children}) {
+import Sidebar from "@/Layouts/Authenticated/Sidebar";
+import TopBar from "@/Layouts/Authenticated/Topbar";
+
+
+export default function Authenticated({ children }) {
     return (
         <>
             <div className="mx-auto max-w-screen hidden lg:block">
                 {/* START: Sidebar */}
+                <Sidebar />
                 {/* END: Sidebar */}
 
                 {/* START: Content */}
                 <div className="ml-[300px] px-[50px]">
                     <div className="py-10 flex flex-col gap-[50px]">
-                        {/* START: TopBar */}
-                        {/* END: TopBar */}
-                        <main>{Children}</main>
+                        {/* START: Topbar */}
+                        <TopBar />
+                        {/* END: Topbar */}
+                        <main>{children}</main>
                     </div>
                 </div>
+
                 {/* END: Content */}
             </div>
             <div className="mx-auto px-4 w-full h-screen lg:hidden flex bg-black">
