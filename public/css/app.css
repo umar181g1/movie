@@ -779,11 +779,17 @@ input.top-search:focus {
 .left-0 {
   left: 0px;
 }
+.left-1\/2 {
+  left: 50%;
+}
 .right-0 {
   right: 0px;
 }
 .top-0 {
   top: 0px;
+}
+.top-1\/2 {
+  top: 50%;
 }
 .top-\[-50px\] {
   top: -50px;
@@ -793,6 +799,9 @@ input.top-search:focus {
 }
 .z-0 {
   z-index: 0;
+}
+.z-20 {
+  z-index: 20;
 }
 .z-40 {
   z-index: 40;
@@ -887,11 +896,20 @@ input.top-search:focus {
 .mt-8 {
   margin-top: 2rem;
 }
+.mt-\[10px\] {
+  margin-top: 10px;
+}
 .mt-\[30px\] {
   margin-top: 30px;
 }
+.mt-\[50px\] {
+  margin-top: 50px;
+}
 .mt-\[60px\] {
   margin-top: 60px;
+}
+.mt-\[70px\] {
+  margin-top: 70px;
 }
 .mt-auto {
   margin-top: auto;
@@ -941,6 +959,10 @@ input.top-search:focus {
 .h-\[6px\] {
   height: 6px;
 }
+.h-\[max-content\] {
+  height: -moz-max-content;
+  height: max-content;
+}
 .h-full {
   height: 100%;
 }
@@ -971,6 +993,9 @@ input.top-search:focus {
 .w-9\/12 {
   width: 75%;
 }
+.w-\[250px\] {
+  width: 250px;
+}
 .w-\[300px\] {
   width: 300px;
 }
@@ -998,6 +1023,13 @@ input.top-search:focus {
 .max-w-7xl {
   max-width: 80rem;
 }
+.max-w-\[302px\] {
+  max-width: 302px;
+}
+.max-w-max {
+  max-width: -moz-max-content;
+  max-width: max-content;
+}
 .max-w-xl {
   max-width: 36rem;
 }
@@ -1015,6 +1047,14 @@ input.top-search:focus {
 }
 .origin-top-right {
   transform-origin: top right;
+}
+.-translate-x-1\/2 {
+  --tw-translate-x: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.-translate-y-\[500px\] {
+  --tw-translate-y: -500px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .translate-x-\[100px\] {
   --tw-translate-x: 100px;
@@ -1072,6 +1112,9 @@ input.top-search:focus {
 .gap-1 {
   gap: 0.25rem;
 }
+.gap-10 {
+  gap: 2.5rem;
+}
 .gap-2 {
   gap: 0.5rem;
 }
@@ -1116,6 +1159,9 @@ input.top-search:focus {
 }
 .rounded-\[25px\] {
   border-radius: 25px;
+}
+.rounded-\[26px\] {
+  border-radius: 26px;
 }
 .rounded-\[30px\] {
   border-radius: 30px;
@@ -1239,6 +1285,9 @@ input.top-search:focus {
 .p-6 {
   padding: 1.5rem;
 }
+.p-\[13px\] {
+  padding: 13px;
+}
 .p-\[30px\] {
   padding: 30px;
 }
@@ -1289,6 +1338,10 @@ input.top-search:focus {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
+.py-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
 .py-24 {
   padding-top: 6rem;
   padding-bottom: 6rem;
@@ -1305,11 +1358,18 @@ input.top-search:focus {
   padding-top: 13px;
   padding-bottom: 13px;
 }
+.py-\[30px\] {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
 .pb-1 {
   padding-bottom: 0.25rem;
 }
 .pb-3 {
   padding-bottom: 0.75rem;
+}
+.pb-7 {
+  padding-bottom: 1.75rem;
 }
 .pl-3 {
   padding-left: 0.75rem;
@@ -1357,6 +1417,9 @@ input.top-search:focus {
 .text-\[26px\] {
   font-size: 26px;
 }
+.text-\[28px\] {
+  font-size: 28px;
+}
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
@@ -1372,6 +1435,13 @@ input.top-search:focus {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+.font-bold {
+  font-weight: 700;
 }
 .font-light {
   font-weight: 300;
@@ -1509,8 +1579,14 @@ input.top-search:focus {
 .outline {
   outline-style: solid;
 }
+.outline-1 {
+  outline-width: 1px;
+}
 .outline-2 {
   outline-width: 2px;
+}
+.outline-\[\#F1F1F1\] {
+  outline-color: #F1F1F1;
 }
 .outline-gray-2 {
   outline-color: #E2E0E0;
@@ -1740,6 +1816,10 @@ input.top-search:focus {
 .active\:text-gray-700:active {
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
+}
+.group:hover .group-hover\:-translate-y-1\/2 {
+  --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .group:hover .group-hover\:translate-x-0 {
   --tw-translate-x: 0px;

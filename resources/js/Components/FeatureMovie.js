@@ -1,4 +1,5 @@
 import PropType from "prop-types";
+import { Link } from "@inertiajs/inertia-react";
 
 FeatureMovie.propType = {
     slug: PropType.string.isRequired,
@@ -49,10 +50,10 @@ export default function FeatureMovie({
                 <img src="/icons/ic_play.svg" width="50" alt="" />
             </div>
         </div>
-        <a
-            href={slug}
+        <Link
+            href={route("prototype.movie.show", slug)}
             className="inset-0 absolute z-50"
-        ></a>
+        ></Link>
     </div>
     );
 }

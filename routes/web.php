@@ -37,4 +37,8 @@ Route::prefix('prototype')->name('prototype.')->group(function () {
     route::get('/subscraptionPlan', function () {
         return Inertia::render('Prototype/SubscraptionPlan');
     })->name('subscraptionPlan');
+
+    route::get('/move/{slug}', function () {
+        return Inertia::render('Prototype/Movie/Show');
+    })->name('movie.show');
 });
